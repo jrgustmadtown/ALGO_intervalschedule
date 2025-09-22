@@ -2,14 +2,12 @@ import sys
 
 def parse_input(idx, inputy):
     jobs = []
-
+    idx += 1
     for _ in range(int(inputy[idx])):
-        idx += 1
         i, j = inputy[idx].split()
         jobs.append([int(i), int(j)])
-
+        idx += 1
     sorted_jobs = sorted(jobs, key=lambda pair: pair[1])
-
     return idx, sorted_jobs
 
 def finish_first(jobs):
