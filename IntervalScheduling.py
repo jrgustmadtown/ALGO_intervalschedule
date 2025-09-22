@@ -1,6 +1,6 @@
 import sys
 
-def parse_input(idx, inputy):
+def parse_input(idx, inputy): # sorting is O(n log n)
     jobs = []
     numjobs = int(inputy[idx])
     idx += 1
@@ -11,7 +11,7 @@ def parse_input(idx, inputy):
     sorted_jobs = sorted(jobs, key=lambda pair: pair[1])
     return idx, sorted_jobs
 
-def finish_first(jobs):
+def finish_first(jobs): # single pass through sorted list is O(n)
     scheduled = 0
     latest = -float("inf")
     for s, f in jobs:
@@ -25,7 +25,7 @@ def main():
     outputy = []
     insts = int(inputy[0])
     idx = 1
-    for _ in range(insts):
+    for _ in range(insts): # n is number of jobs sent to finish_first()
         idx, sorted_jobs = parse_input(idx, inputy)
         outputy.append(finish_first(sorted_jobs))
     for _ in outputy:
