@@ -2,8 +2,9 @@ import sys
 
 def parse_input(idx, inputy):
     jobs = []
+    numjobs = int(inputy[idx])
     idx += 1
-    for _ in range(int(inputy[idx])):
+    for _ in range(numjobs):
         i, j = inputy[idx].split()
         jobs.append([int(i), int(j)])
         idx += 1
