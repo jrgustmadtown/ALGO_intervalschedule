@@ -34,5 +34,7 @@ def main():
     for _ in outputy:
         print(_ + "\n")
 
+if __name__ == "__main__":
+    main()
 
 
